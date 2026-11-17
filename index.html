@@ -5,47 +5,82 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Aliopzte Studio</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#0b0b10;color:#fff;font-family:sans-serif}
-header{background:#12121a;padding:14px 16px;position:sticky;top:0;display:flex;justify-content:space-between;align-items:center}
-.logo{font-weight:900;font-size:20px}.logo span{color:#a78bfa}
-nav a{color:#ddd;text-decoration:none;margin:0 8px;font-weight:700;font-size:14px}
-.hero{text-align:center;padding:36px 16px}.hero h1{font-size:32px;margin:0}.hero p{color:#bbb}
-.btn{background:linear-gradient(90deg,#8b5cf6,#ec4899);border:none;color:#fff;padding:12px 20px;border-radius:999px;font-weight:800;cursor:pointer}
-.wrap{max-width:1000px;margin:auto;padding:0 14px 30px}
-input{width:100%;padding:12px;border-radius:999px;border:1px solid #333;background:#17171f;color:#fff;margin:16px 0}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.card{background:#16161f;border:1px solid #222;border-radius:16px;overflow:hidden;cursor:pointer}
-.thumb{aspect-ratio:16/9;background:#000}.thumb video,.thumb img{width:100%;height:100%;object-fit:cover}
-.body{padding:12px}.body h3{margin:0;font-size:16px}.body p{color:#aaa;font-size:13px}
-.about{background:#14141c;border-radius:18px;padding:20px;margin-top:26px}
-footer{text-align:center;color:#888;padding:20px;font-size:13px}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;padding:16px;z-index:99}.modal.open{display:block}
-.box{background:#14141c;max-width:800px;margin:20px auto;border-radius:16px;overflow:hidden}
-.media{aspect-ratio:16/9;background:#000}.media iframe,.media video{width:100%;height:100%;border:none}
-.pad{padding:16px}
-@media(max-width:700px){.grid{grid-template-columns:1fr}nav{display:none}.hero h1{font-size:26px}}
+:root{--c1:#8b5cf6;--c2:#ec4899}
+*{box-sizing:border-box}body{margin:0;background:#07070f;color:#fff;font-family:sans-serif;overflow-x:hidden}
+.neon-bg{position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at 20% 20%,rgba(139,92,246,.25),transparent 40%),radial-gradient(circle at 80% 80%,rgba(236,72,153,.25),transparent 40%),#07070f}
+.blob{position:absolute;width:280px;height:280px;border-radius:50%;filter:blur(70px);opacity:.55;animation:float 9s infinite alternate}
+@keyframes float{from{transform:translateY(0)}to{transform:translateY(-40px)}}
+header{position:sticky;top:0;z-index:50;background:rgba(10,10,20,.9);backdrop-filter:blur(10px);border-bottom:2px solid var(--c1);box-shadow:0 0 20px var(--c1);padding:12px 16px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:900;font-size:22px;text-shadow:0 0 15px var(--c1)}.logo span{color:var(--c2);text-shadow:0 0 15px var(--c2)}
+nav a{color:#fff;text-decoration:none;margin:0 8px;font-weight:800;font-size:15px;text-shadow:0 0 8px var(--c1)}
+.colorBtn{background:transparent;border:2px solid var(--c1);color:#fff;padding:8px 14px;border-radius:999px;cursor:pointer;font-weight:800;box-shadow:0 0 12px var(--c1)}
+.wrap{max-width:1050px;margin:auto;padding:0 14px 40px}
+.hero{text-align:center;padding:34px 10px}.hero h1{font-size:36px;margin:0;text-shadow:0 0 20px var(--c1),0 0 40px var(--c2)}.hero p{color:#ccc}
+.btn{background:linear-gradient(90deg,var(--c1),var(--c2));border:none;color:#fff;padding:13px 22px;border-radius:999px;font-weight:900;cursor:pointer;box-shadow:0 0 20px var(--c1);font-size:15px}
+.panel{background:#12121e;border:2px solid var(--c1);border-radius:16px;padding:14px;margin:14px 0;display:none;box-shadow:0 0 20px var(--c1)}
+.themeBtn{padding:10px 14px;border-radius:999px;border:none;cursor:pointer;font-weight:800;margin:4px;color:#fff}
+input[type=text]{width:100%;padding:12px;border-radius:999px;border:2px solid var(--c1);background:#14141f;color:#fff;margin:14px 0;box-shadow:0 0 12px var(--c1)}
+.filters{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:8px 14px;border-radius:999px;background:#1a1a28;border:1px solid var(--c1);cursor:pointer;font-weight:700}.chip.active{background:var(--c1);box-shadow:0 0 12px var(--c1)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.card{background:#13131f;border:2px solid #222;border-radius:18px;overflow:hidden;cursor:pointer;transition:.2s}.card:hover{border-color:var(--c1);box-shadow:0 0 22px var(--c1);transform:translateY(-3px)}
+.thumb{aspect-ratio:16/9;background:#000;position:relative}.thumb video,.thumb img{width:100%;height:100%;object-fit:cover}.badge{position:absolute;bottom:8px;left:8px;background:rgba(0,0,0,.8);padding:4px 10px;border-radius:999px;font-size:12px}.new{position:absolute;top:8px;right:8px;background:var(--c2);padding:4px 10px;border-radius:999px;font-size:12px;font-weight:900;box-shadow:0 0 12px var(--c2)}
+.body{padding:12px}.body h3{margin:0;font-size:16px}.body p{color:#aaa;font-size:13px}.meta{color:#888;font-size:12px}
+.seriesCard{background:linear-gradient(135deg,#1a1030,#2a0f2e);border:2px solid var(--c1);border-radius:16px;padding:16px;margin-bottom:10px;box-shadow:0 0 15px var(--c1);cursor:pointer}
+.about{background:#12121e;border:2px solid var(--c2);border-radius:20px;padding:20px;margin-top:26px;box-shadow:0 0 20px var(--c2)}
+.stats{display:flex;gap:10px}.stat{flex:1;background:#1c1c28;border-radius:14px;padding:12px;text-align:center}.stat b{font-size:24px;display:block;text-shadow:0 0 10px var(--c1)}
+.bottomNav{position:fixed;bottom:0;left:0;right:0;background:#12121e;border-top:2px solid var(--c1);display:none;justify-content:space-around;padding:10px;z-index:60}.bottomNav a{color:#fff;text-decoration:none;font-weight:800;font-size:14px}
+footer{text-align:center;color:#888;padding:30px 10px 70px}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;padding:14px;z-index:99;overflow:auto}.modal.open{display:block}.box{background:#14141f;max-width:820px;margin:20px auto;border-radius:18px;overflow:hidden;border:2px solid var(--c1);box-shadow:0 0 25px var(--c1)}
+.media{aspect-ratio:16/9;background:#000}.media iframe,.media video{width:100%;height:100%;border:none}.pad{padding:16px}
+@media(max-width:750px){.grid{grid-template-columns:1fr}nav{display:none}.bottomNav{display:flex}.hero h1{font-size:28px}}
 </style>
 </head>
 <body>
-<header><div class="logo">Aliopzte <span>Studio</span></div><nav><a href="#v">الفيديوهات</a><a href="#s">السلاسل</a><a href="#a">من نحن</a></nav></header>
-<div class="wrap">
-<div class="hero"><h1>Aliopzte Studio</h1><p>فيديوهات وسلاسل من صنعنا، انتو بس تتفرجون</p><br><button class="btn" onclick="document.getElementById('v').scrollIntoView({behavior:'smooth'})">▶ شاهد الفيديوهات</button></div>
-<input id="search" placeholder="دور على فيديو..." oninput="render()">
+<div class="neon-bg"><div class="blob" style="background:#8b5cf6;top:10%;left:5%"></div><div class="blob" style="background:#ec4899;bottom:10%;right:5%;animation-delay:1s"></div><div class="blob" style="background:#06b6d4;top:50%;left:45%;animation-delay:2s"></div></div>
+<header><div class="logo">Aliopzte <span>Studio</span></div><nav><a href="#home">🏠 الرئيسية</a><a href="#v">🎬 الفيديوهات</a><a href="#s">📺 السلاسل</a><a href="#a">ℹ️ من نحن</a></nav><button class="colorBtn" onclick="toggleColor()">🎨 غير الألوان</button></header>
+<div class="wrap" id="home">
+<div class="hero"><h1>Aliopzte Studio ✨</h1><p>فيديوهات وسلاسل نيون، انتو بس تتفرجون 🔥</p><br><button class="btn" onclick="document.getElementById('v').scrollIntoView({behavior:'smooth'})">▶ شاهد أحدث الفيديوهات</button></div>
+<div class="panel" id="colorPanel"><b>🎨 اختار لون الموقع:</b><br><br>
+<button class="themeBtn" style="background:linear-gradient(90deg,#8b5cf6,#ec4899)" onclick="setTheme('#8b5cf6','#ec4899')">💜 بنفسجي</button>
+<button class="themeBtn" style="background:linear-gradient(90deg,#06b6d4,#3b82f6)" onclick="setTheme('#06b6d4','#3b82f6')">💙 سماوي</button>
+<button class="themeBtn" style="background:linear-gradient(90deg,#22c55e,#a3e635)" onclick="setTheme('#22c55e','#a3e635')">💚 أخضر نيون</button>
+<button class="themeBtn" style="background:linear-gradient(90deg,#ef4444,#f97316)" onclick="setTheme('#ef4444','#f97316')">❤️ أحمر</button>
+<button class="themeBtn" style="background:linear-gradient(90deg,#eab308,#f59e0b);color:#000" onclick="setTheme('#eab308','#f59e0b')">💛 ذهبي</button>
+<br><br>أو اختار على كيفك: <input type="color" id="pick1" value="#8b5cf6" onchange="custom()"> <input type="color" id="pick2" value="#ec4899" onchange="custom()"><br><small style="color:#aaa">اللون يضل محفوظ بجهازك انت بس.</small></div>
+<div id="continueBox" style="display:none;background:#12121e;border:2px solid var(--c2);border-radius:16px;padding:14px;box-shadow:0 0 15px var(--c2)"><b>⏯️ أكمل المشاهدة:</b> <span id="continueText"></span> <button class="btn" style="padding:8px 14px" onclick="openContinue()">أكمل ▶</button></div>
+<input type="text" id="search" placeholder="🔍 دور على فيديو أو سلسلة..." oninput="render()">
+<div style="margin:10px 0"><b>ترتيب:</b> <select id="sort" onchange="render()" style="padding:8px;border-radius:999px;background:#1a1a28;color:#fff;border:1px solid var(--c1)"><option value="new">الأحدث</option><option value="old">الأقدم</option></select></div>
+<div class="filters" id="filters"></div>
 <h2 id="v">🎬 الفيديوهات</h2><div id="grid" class="grid"></div>
 <h2 id="s" style="margin-top:26px">📺 السلاسل</h2><div id="series"></div>
-<div class="about" id="a"><h2>من نحن - Aliopzte Studio</h2><p>أنا علي. هذا الاستوديو الخاص فيني. هون بنشر فيديوهاتي وسلاسلي. انتو بس تتفرجون.</p><p>تابعني: يوتيوب • انستغرام • تيك توك</p></div>
+<div class="about" id="a"><h2>ℹ️ من نحن - Aliopzte Studio</h2><p>أنا علي. هذا الاستوديو الخاص فيني. هون بنشر فيديوهاتي وسلاسلي، من أفكار، تحديات، فلوقات، وكل شي بحب أشاركو معكم.</p><div class="stats"><div class="stat"><b id="stV">0</b><span>فيديو</span></div><div class="stat"><b id="stS">0</b><span>سلسلة</span></div><div class="stat"><b>∞</b><span>أفكار جاية</span></div></div><p style="margin-top:14px">تابعني: ▶ يوتيوب • 📸 انستغرام • 🎵 تيك توك</p></div>
 </div>
-<footer>Aliopzte Studio © 2026</footer>
-<div class="modal" id="modal" onclick="if(event.target==this)closeM()"><div class="box"><div class="media" id="mMedia"></div><div class="pad"><button onclick="closeM()" style="float:left">✕ إغلاق</button><h3 id="mTitle"></h3><p id="mDesc" style="color:#bbb"></p></div></div></div>
+<footer>Aliopzte Studio © 2026 • نيون ✨</footer>
+<div class="bottomNav"><a href="#home">🏠 الرئيسية</a><a href="#v">🎬 فيديوهات</a><a href="#s">📺 سلاسل</a><a href="#a">ℹ️ من نحن</a></div>
+<div class="modal" id="modal" onclick="if(event.target==this)closeM()"><div class="box"><div class="media" id="mMedia"></div><div class="pad"><button onclick="closeM()" style="float:left">✕ إغلاق</button><h3 id="mTitle"></h3><p id="mDesc" style="color:#bbb"></p><p id="mMeta" style="color:#888;font-size:13px"></p><button class="btn" onclick="toggleLike()" id="likeBtn">❤️ لايك</button> <button class="btn" onclick="shareV()" style="background:#1a1a28;border:2px solid var(--c1)">🔗 مشاركة</button> <button class="btn" onclick="toggleFav()" id="favBtn">⭐ مفضلة</button><br><br><button class="btn" id="nextBtn" style="display:none;width:100%" onclick="playNext()">⏭ الحلقة التالية</button></div></div></div>
 <script>
-let ALL=[];
+let ALL=[],curFilter='الكل',curVideo=null;
 const FB=[{id:1,title:"مثال - الحلقة 1: البداية",description:"هذا مثال، احذفه لما تضيف فيديوك.",link:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",series:"سلسلة البداية",category:"ترفيه",date:"2026-11-17"}];
-function emb(l){if(l.includes("youtube.com/watch")){return {t:"i",s:"https://www.youtube.com/embed/"+new URL(l).searchParams.get("v")}}if(l.includes("youtu.be/")){return {t:"i",s:"https://www.youtube.com/embed/"+l.split("youtu.be/")[1].split("?")[0]}}if(l.includes("youtube.com/shorts/")){return {t:"i",s:"https://www.youtube.com/embed/"+l.split("/shorts/")[1].split("?")[0]}}if(l.match(/\.mp4/i))return {t:"v",s:l};return {t:"i",s:l}}
-function thumb(v){let e=emb(v.link);if(e.t=="i"&&e.s.includes("youtube")){let id=e.s.split("/embed/")[1];return '<img src="https://i.ytimg.com/vi/'+id+'/hqdefault.jpg">'}if(e.t=="v")return '<video src="'+v.link+'#t=0.5" preload="metadata" muted></video>';return '<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:40px">▶</div>'}
-function render(){let q=document.getElementById("search").value||"";let list=ALL.filter(v=>(v.title+v.description+v.series).includes(q));document.getElementById("grid").innerHTML=list.map(v=>'<div class="card" onclick="openV('+v.id+')"><div class="thumb">'+thumb(v)+'</div><div class="body"><h3>'+v.title+'</h3><p>'+v.description+'</p><p style="color:#888">'+(v.series||"فيديو مستقل")+' • '+(v.category||"")+'</p></div></div>').join("");let map={};ALL.forEach(v=>{if(v.series){if(!map[v.series])map[v.series]=[];map[v.series].push(v)}});document.getElementById("series").innerHTML=Object.keys(map).map(n=>'<div style="background:#1e1b3a;padding:16px;border-radius:14px;margin-bottom:10px"><b>📺 '+n+'</b> - '+map[n].length+' حلقة</div>').join("")||"لسا ما فيه سلاسل";}
-function openV(id){let v=ALL.find(x=>x.id==id);let e=emb(v.link);document.getElementById("mMedia").innerHTML=e.t=="v"?'<video src="'+e.s+'" controls autoplay></video>':'<iframe src="'+e.s+'" allowfullscreen></iframe>';document.getElementById("mTitle").textContent=v.title;document.getElementById("mDesc").textContent=v.description;document.getElementById("modal").classList.add("open")}
-function closeM(){document.getElementById("modal").classList.remove("open");document.getElementById("mMedia").innerHTML=""}
-async function load(){try{let r=await fetch("videos.json");ALL=await r.json()}catch(e){ALL=FB}render()}load();
+function setTheme(c1,c2){document.documentElement.style.setProperty('--c1',c1);document.documentElement.style.setProperty('--c2',c2);localStorage.setItem('ali_theme',JSON.stringify({c1,c2}));}
+function custom(){setTheme(document.getElementById('pick1').value,document.getElementById('pick2').value)}
+function toggleColor(){let p=document.getElementById('colorPanel');p.style.display=p.style.display=='block'?'none':'block'}
+let saved=localStorage.getItem('ali_theme');if(saved){try{let t=JSON.parse(saved);setTheme(t.c1,t.c2)}catch(e){}}
+function emb(l){if(l.includes('youtube.com/watch'))return{t:'i',s:'https://www.youtube.com/embed/'+new URL(l).searchParams.get('v')};if(l.includes('youtu.be/'))return{t:'i',s:'https://www.youtube.com/embed/'+l.split('youtu.be/')[1].split('?')[0]};if(l.includes('youtube.com/shorts/'))return{t:'i',s:'https://www.youtube.com/embed/'+l.split('/shorts/')[1].split('?')[0]};if(l.match(/\.mp4/i))return{t:'v',s:l};return{t:'i',s:l}}
+function isNew(d){if(!d)return false;let diff=(Date.now()-new Date(d).getTime())/86400000;return diff<14}
+function thumb(v){let e=emb(v.link);if(e.t=='i'&&e.s.includes('youtube')){let id=e.s.split('/embed/')[1];return '<img src="https://i.ytimg.com/vi/'+id+'/hqdefault.jpg">'}if(e.t=='v')return '<video src="'+v.link+'#t=0.5" preload="metadata" muted></video>';return '<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:40px">▶</div>'}
+function getLikes(){try{return JSON.parse(localStorage.getItem('ali_likes')||'{}')}catch(e){return{}}}
+function getFavs(){try{return JSON.parse(localStorage.getItem('ali_fav')||'[]')}catch(e){return[]}}
+function render(){let cats=['الكل'];ALL.forEach(v=>{if(v.series&&!cats.includes(v.series))cats.push(v.series);if(v.category&&!cats.includes(v.category))cats.push(v.category)});document.getElementById('filters').innerHTML=cats.map(c=>'<button class="chip '+(c==curFilter?'active':'')+'" onclick="setF(\''+c+'\')">'+c+'</button>').join('');let q=document.getElementById('search').value||'';let list=ALL.filter(v=>{if(curFilter!='الكل'&&v.series!=curFilter&&v.category!=curFilter)return false;return (v.title+v.description+v.series).includes(q)});if(document.getElementById('sort').value=='old')list=[...list].reverse();document.getElementById('grid').innerHTML=list.map(v=>{let likes=getLikes()[v.id]||0;return '<div class="card" onclick="openV('+v.id+')"><div class="thumb">'+thumb(v)+(isNew(v.date)?'<span class="new">جديد 🔥</span>':'')+'<span class="badge">'+(v.category||'فيديو')+'</span></div><div class="body"><h3>'+v.title+'</h3><p>'+v.description+'</p><div class="meta">❤️ '+likes+' • '+(v.series||'فيديو مستقل')+' • '+(v.date||'')+'</div></div></div>'}).join('')||'<p>لسا ما فيه فيديوهات...</p>';let map={};ALL.forEach(v=>{if(v.series){if(!map[v.series])map[v.series]=[];map[v.series].push(v)}});document.getElementById('series').innerHTML=Object.keys(map).map(n=>'<div class="seriesCard" onclick="setF(\''+n+'\');document.getElementById(\'v\').scrollIntoView({behavior:\'smooth\'})"><h3>📺 '+n+'</h3><p style="color:#bbb">'+map[n].length+' حلقة • اضغط لتشوف الحلقات</p></div>').join('')||'لسا ما فيه سلاسل.';document.getElementById('stV').textContent=ALL.length;document.getElementById('stS').textContent=Object.keys(map).length;let last=localStorage.getItem('ali_last');if(last){let lv=ALL.find(x=>x.id==last);if(lv){document.getElementById('continueBox').style.display='block';document.getElementById('continueText').textContent=lv.title}}}
+function setF(c){curFilter=c;render()}
+function openV(id){let v=ALL.find(x=>x.id==id);curVideo=v;localStorage.setItem('ali_last',v.id);let e=emb(v.link);document.getElementById('mMedia').innerHTML=e.t=='v'?'<video src="'+e.s+'" controls autoplay></video>':'<iframe src="'+e.s+'" allowfullscreen allow="autoplay"></iframe>';document.getElementById('mTitle').textContent=v.title;document.getElementById('mDesc').textContent=v.description;document.getElementById('mMeta').textContent=(v.series||'')+' • '+(v.category||'')+' • '+(v.date||'');updateLikeFav();let next=null;if(v.series){let eps=ALL.filter(x=>x.series==v.series).sort((a,b)=>a.id-b.id);let idx=eps.findIndex(x=>x.id==v.id);if(idx>=0&&idx<eps.length-1)next=eps[idx+1]}let nb=document.getElementById('nextBtn');if(next){nb.style.display='block';nb.dataset.next=next.id;nb.textContent='⏭ الحلقة التالية: '+next.title}else nb.style.display='none';document.getElementById('modal').classList.add('open');render()}
+function updateLikeFav(){let likes=getLikes();document.getElementById('likeBtn').textContent='❤️ لايك ('+(likes[curVideo.id]||0)+')';let favs=getFavs();document.getElementById('favBtn').textContent=favs.includes(curVideo.id)?'⭐ محفوظ بالمفضلة':'⭐ مفضلة'}
+function toggleLike(){let l=getLikes();l[curVideo.id]=(l[curVideo.id]||0)+1;localStorage.setItem('ali_likes',JSON.stringify(l));updateLikeFav();render()}
+function toggleFav(){let f=getFavs();let i=f.indexOf(curVideo.id);if(i>=0)f.splice(i,1);else f.push(curVideo.id);localStorage.setItem('ali_fav',JSON.stringify(f));updateLikeFav()}
+function shareV(){let url=location.href;if(navigator.clipboard)navigator.clipboard.writeText(url);alert('تم نسخ رابط الموقع! ارسله لأصحابك 🔗')}
+function playNext(){openV(parseInt(document.getElementById('nextBtn').dataset.next))}
+function openContinue(){openV(parseInt(localStorage.getItem('ali_last')))}
+function closeM(){document.getElementById('modal').classList.remove('open');document.getElementById('mMedia').innerHTML=''}
+async function load(){try{let r=await fetch('videos.json');ALL=await r.json()}catch(e){ALL=FB}render()}load();
 </script>
 </body>
 </html>
