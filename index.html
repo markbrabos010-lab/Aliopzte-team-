@@ -2,111 +2,174 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>ALIOPZTE Store | عالم الـ RGB والألعاب</title>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-:root{--c1:#ff007f;--c2:#00f2fe;--c3:#7f00ff;--c4:#00ff88;--bg:#05070e;--card:rgba(13,18,30,.9)}
-body.theme-matrix{--c1:#00ff41;--c2:#008f11;--c3:#00ff88;--c4:#39ff14}
-body.theme-gold{--c1:#ffd700;--c2:#f59e0b;--c3:#fbbf24;--c4:#fffbeb}
-body.theme-crimson{--c1:#ff003c;--c2:#ff4d00;--c3:#990024;--c4:#ff007f}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);background-image:radial-gradient(circle at 20% 20%,rgba(255,0,127,.12),transparent 50%),radial-gradient(circle at 80% 80%,rgba(0,242,254,.12),transparent 50%);color:#fff;font-family:'Tajawal',sans-serif;padding-bottom:80px}
-a{color:#fff;text-decoration:none}
-header{position:sticky;top:0;z-index:100;background:rgba(5,7,14,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.1);padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
-.logo{font-weight:900;font-size:22px}.logo span{background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.search{flex:1;max-width:280px;position:relative}.search input{width:100%;padding:10px 38px 10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0d1220;color:#fff;font-family:inherit}.search i{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:#94a3b8}
-.btn{border:none;cursor:pointer;font-family:inherit;font-weight:800;border-radius:10px;padding:9px 14px;color:#fff}
-.btn-grad{background:linear-gradient(90deg,var(--c1),var(--c2));box-shadow:0 0 15px var(--c1)}
-.btn-glass{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15)}
-.wrap{max-width:1280px;margin:auto;padding:14px;display:grid;grid-template-columns:1fr 300px;gap:16px}
-.main{min-width:0}.side{position:sticky;top:80px;height:fit-content}
-.hero{background:linear-gradient(135deg,rgba(255,0,127,.25),rgba(0,242,254,.25));border:2px solid var(--c2);border-radius:20px;overflow:hidden;display:flex;gap:0;margin-bottom:16px;box-shadow:0 0 25px var(--c2)}
-.hero img{width:45%;object-fit:cover;min-height:200px}.hero-txt{padding:18px;flex:1}.hero-txt h2{margin:0 0 8px;font-size:22px}.hero-txt p{color:#cbd5e1;font-size:14px}
-.cats{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.chip{padding:8px 16px;border-radius:999px;background:#141a2e;border:1px solid rgba(255,255,255,.15);cursor:pointer;font-weight:700}.chip.active{background:linear-gradient(90deg,var(--c1),var(--c2));box-shadow:0 0 12px var(--c1);border:none}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.card{background:var(--card);border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;cursor:pointer;transition:.2s}.card:hover{transform:translateY(-3px);border-color:var(--c2);box-shadow:0 0 18px var(--c2)}
-.card-img{aspect-ratio:16/9;background:#000;position:relative;overflow:hidden}.card-img img{width:100%;height:100%;object-fit:cover}.badge{position:absolute;top:8px;right:8px;background:rgba(0,0,0,.75);padding:4px 10px;border-radius:999px;font-size:12px}.heart{position:absolute;top:8px;left:8px;background:rgba(0,0,0,.6);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:none;color:#fff;cursor:pointer}.heart.on{color:#ff007f}
-.card-body{padding:12px}.card-body h3{margin:0;font-size:16px;line-height:1.4}.card-body p{color:#94a3b8;font-size:13px;line-height:1.5;min-height:38px}.meta{color:#64748b;font-size:12px;margin:8px 0}.row{display:flex;gap:8px}.row .btn{flex:1}
-.sideCard{background:var(--card);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:16px;margin-bottom:14px}.sideCard h3{margin:0 0 10px}.discord{background:linear-gradient(135deg,#5865F2,#4752c4)}
-.about{grid-column:1/-1;background:var(--card);border:1px solid var(--c1);border-radius:20px;padding:20px;box-shadow:0 0 18px var(--c1)}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;z-index:999;padding:14px;overflow:auto}.modal.open{display:block}.box{background:#0d1220;max-width:700px;margin:30px auto;border-radius:20px;overflow:hidden;border:2px solid var(--c2)}.box img{width:100%;aspect-ratio:16/9;object-fit:cover}.pad{padding:18px}
-.bottomNav{position:fixed;bottom:0;left:0;right:0;background:#0d1220;border-top:2px solid var(--c1);display:none;justify-content:space-around;padding:10px;z-index:100}.bottomNav a{font-weight:800;font-size:14px}
-@media(max-width:900px){.wrap{grid-template-columns:1fr}.side{position:static}.grid{grid-template-columns:repeat(2,1fr)}.hero{flex-direction:column}.hero img{width:100%}}
-@media(max-width:550px){.grid{grid-template-columns:1fr}.bottomNav{display:flex}.search{max-width:100%;order:3;flex-basis:100%}}
+:root{--bg-dark:#05070e;--card-bg:rgba(13,18,30,.88);--text-main:#f8fafc;--text-muted:#94a3b8;--rgb-speed:4s;--theme-c1:#ff007f;--theme-c2:#00f2fe;--theme-c3:#7f00ff;--theme-c4:#00ff88}
+body.theme-matrix{--theme-c1:#00ff41;--theme-c2:#008f11;--theme-c3:#00ff88;--theme-c4:#39ff14}
+body.theme-gold{--theme-c1:#ffd700;--theme-c2:#f59e0b;--theme-c3:#fbbf24;--theme-c4:#fffbeb}
+body.theme-crimson{--theme-c1:#ff003c;--theme-c2:#ff4d00;--theme-c3:#990024;--theme-c4:#ff007f}
+*{box-sizing:border-box}html,body{width:100%;max-width:100vw;overflow-x:hidden;margin:0;padding:0}
+body{background-color:var(--bg-dark);background-image:radial-gradient(circle at 20% 20%,rgba(255,0,128,.08),transparent 50%),radial-gradient(circle at 80% 80%,rgba(0,242,254,.08),transparent 50%);background-attachment:fixed;color:var(--text-main);font-family:'Tajawal',sans-serif;min-height:100vh;padding-bottom:80px}
+@keyframes dynamicRgbGlow{0%{border-color:var(--theme-c1);box-shadow:0 0 15px var(--theme-c1)}25%{border-color:var(--theme-c2);box-shadow:0 0 15px var(--theme-c2)}50%{border-color:var(--theme-c3);box-shadow:0 0 15px var(--theme-c3)}75%{border-color:var(--theme-c4);box-shadow:0 0 15px var(--theme-c4)}100%{border-color:var(--theme-c1);box-shadow:0 0 15px var(--theme-c1)}}
+@keyframes rgbTextAnimation{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.rgb-text{background:linear-gradient(90deg,var(--theme-c1),var(--theme-c2),var(--theme-c3),var(--theme-c4),var(--theme-c1));background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:rgbTextAnimation var(--rgb-speed) ease infinite}
+.main-header{background:rgba(5,7,14,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08);position:sticky;top:0;z-index:1000;padding:12px 15px;width:100%}
+.header-container{max-width:1380px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:8px;text-decoration:none}.brand-icon{font-size:1.6rem;color:var(--theme-c2);filter:drop-shadow(0 0 8px var(--theme-c2))}.brand-text{font-size:1.2rem;font-weight:900;color:#fff}
+.search-box{position:relative;flex:1;min-width:180px;max-width:240px}.search-box input{width:100%;padding:8px 38px 8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(13,18,30,.9);color:#fff;font-family:inherit;font-size:.85rem}.search-box i{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--text-muted)}
+.header-actions{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.btn-action{display:inline-flex;align-items:center;gap:5px;padding:6px 10px;border-radius:8px;font-weight:700;font-size:.78rem;text-decoration:none;color:#fff;border:none;cursor:pointer;font-family:inherit}
+.btn-device-select{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:#fff;padding:6px 10px;border-radius:8px;font-weight:700;font-size:.78rem;cursor:pointer;font-family:inherit}
+.btn-social{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none}.btn-social.youtube{background:#ff0000}.btn-social.discord{background:#5865F2}
+.news-ticker-bar{background:rgba(13,18,30,.9);border-bottom:1px solid rgba(255,255,255,.06);padding:8px 0;overflow:hidden;white-space:nowrap;width:100%;font-size:.85rem;color:#cbd5e1}
+.news-ticker-content{display:inline-block;animation:tickerScroll 25s linear infinite;padding-left:100%}@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
+.container{max-width:1380px;margin:0 auto;padding:15px 12px;width:100%}
+.featured-banner{background:rgba(13,18,30,.9);border:2px solid var(--theme-c2);animation:dynamicRgbGlow var(--rgb-speed) infinite linear;border-radius:16px;padding:16px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.featured-badge{display:inline-block;background:var(--theme-c1);color:#fff;font-size:.7rem;font-weight:900;padding:3px 8px;border-radius:6px;margin-bottom:6px}.featured-title{font-size:1.2rem;font-weight:900;color:#fff}
+.recent-box{background:rgba(13,18,30,.75);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:12px;margin-bottom:16px;display:none}.recent-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-top:8px}.recent-mini-card{background:rgba(5,7,14,.85);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:7px;display:flex;align-items:center;gap:9px;cursor:pointer}.recent-mini-card img{width:42px;height:42px;border-radius:8px;object-fit:cover}
+.main-layout{display:flex;gap:16px;align-items:flex-start;width:100%}.main-content{flex:1;min-width:0;width:100%}
+.partners-sidebar{width:280px;display:flex;flex-direction:column;gap:14px}.sidebar-box{background:rgba(13,18,30,.88);border:1px solid var(--theme-c2);animation:dynamicRgbGlow var(--rgb-speed) infinite linear;border-radius:16px;padding:14px}
+.categories-bar{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;margin-bottom:12px;scrollbar-width:none}.cat-btn{background:rgba(13,18,30,.8);border:1px solid rgba(255,255,255,.1);color:var(--text-muted);padding:7px 14px;border-radius:10px;font-weight:700;font-size:.8rem;cursor:pointer;white-space:nowrap;font-family:inherit}.cat-btn.active{background:linear-gradient(90deg,var(--theme-c2),var(--theme-c3),var(--theme-c1));color:#fff;border-color:transparent;font-weight:900}
+.items-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px;width:100%}
+.item-card{background:var(--card-bg);border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;transition:all .3s}.item-card:hover{transform:translateY(-4px);border-color:var(--theme-c2)}
+.card-thumb{width:100%;height:165px;position:relative;background:#000;overflow:hidden}.card-thumb img{width:100%;height:100%;object-fit:cover}
+.badge-tag{position:absolute;top:8px;right:8px;padding:3px 8px;border-radius:6px;font-size:.68rem;font-weight:800;color:#fff;background:rgba(5,7,14,.85);border:1px solid rgba(255,255,255,.15)}
+.glow-status-badge{position:absolute;bottom:8px;right:8px;padding:3px 9px;border-radius:6px;font-size:.68rem;font-weight:900;color:#fff;background:linear-gradient(90deg,var(--theme-c1),var(--theme-c3));box-shadow:0 0 10px rgba(255,0,127,.5)}
+.btn-card-fav{position:absolute;top:8px;left:8px;background:rgba(5,7,14,.8);border:none;color:#94a3b8;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5}.btn-card-fav.active{color:#ef4444}
+.card-details{padding:12px;display:flex;flex-direction:column;flex:1}.card-title{font-size:.98rem;font-weight:800;color:#fff;margin-bottom:4px}
+.card-meta-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:.7rem;color:#38bdf8;margin-bottom:8px;background:rgba(0,242,254,.07);padding:4px 8px;border-radius:6px}
+.card-desc{font-size:.78rem;color:var(--text-muted);margin-bottom:10px;flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.btn-card-view{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;padding:8px;background:linear-gradient(90deg,var(--theme-c2),var(--theme-c3),var(--theme-c1),var(--theme-c2));background-size:200% 200%;color:#fff;border-radius:8px;font-weight:900;font-size:.82rem;border:none;cursor:pointer;animation:rgbTextAnimation var(--rgb-speed) infinite linear;font-family:inherit}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;z-index:2000;padding:14px;overflow:auto}.modal-overlay.open{display:block}.modal-box{background:#0d1220;max-width:600px;margin:30px auto;border-radius:16px;padding:18px;position:relative;border:2px solid var(--theme-c2)}.modal-close{position:absolute;top:10px;left:10px;background:rgba(255,255,255,.1);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer}
+.script-copy-box{background:rgba(0,0,0,.4);border:1px solid rgba(0,255,136,.3);border-radius:10px;padding:10px;margin:10px 0}
+.bottomNav{position:fixed;bottom:0;left:0;right:0;background:#0d1220;border-top:2px solid var(--theme-c1);display:none;justify-content:space-around;padding:10px;z-index:1000}.bottomNav a{color:#fff;text-decoration:none;font-weight:800;font-size:14px}
+@media(max-width:900px){.main-layout{flex-direction:column}.partners-sidebar{width:100%}}
+@media(max-width:600px){.bottomNav{display:flex}.search-box{max-width:100%;order:3;flex-basis:100%}}
 </style>
 </head>
 <body>
-<header>
-<div class="logo">ALIOPZTE <span>Store</span></div>
-<div class="search"><input id="search" placeholder="🔍 دور على لعبة، حلقة..." oninput="render()"><i class="fa-solid fa-magnifying-glass"></i></div>
-<div style="display:flex;gap:6px">
-<button class="btn btn-glass" onclick="cycleTheme()">🎨 <span id="themeName">RGB</span></button>
-<a href="https://discord.gg/7BNpX9uZa" target="_blank" class="btn" style="background:#5865F2">💬 ديسكورد</a>
-</div>
-</header>
+<header class="main-header"><div class="header-container">
+<a href="index.html" class="brand"><i class="fa-solid fa-gamepad brand-icon"></i><div class="brand-text">ALIOPZTE <span class="rgb-text">STORE</span></div></a>
+<div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input type="text" id="searchInput" oninput="filterItems()" placeholder="ابحث عن ألعاب، مودات..."></div>
+<div class="header-actions">
+<button class="btn-device-select" onclick="cycleTheme()" title="تغيير ثيم الموقع"><i class="fa-solid fa-palette"></i> <span id="themeLabel">RGB</span></button>
+<button class="btn-device-select" onclick="cycleRgbSpeed()" title="سرعة حركة الألوان"><i class="fa-solid fa-bolt"></i> <span id="speedLabel">1x</span></button>
+<button class="btn-action" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2)" onclick="toggleWishlistFilter()"><i class="fa-solid fa-heart" style="color:#ef4444"></i> (<span id="favCount">0</span>)</button>
+<a href="https://youtube.com/@aliopzte790?si=mW1nU7yXKT5EjYGI" target="_blank" class="btn-social youtube"><i class="fa-brands fa-youtube"></i></a>
+<a href="https://discord.gg/7BNpX9uZa" target="_blank" class="btn-social discord"><i class="fa-brands fa-discord"></i></a>
+</div></div></header>
 
-<div class="wrap">
-<div class="main">
-<div id="featured"></div>
-<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
-<h2 style="margin:0">🔥 كل العناصر</h2>
-<select id="sort" onchange="render()" style="padding:8px;border-radius:10px;background:#0d1220;color:#fff;border:1px solid rgba(255,255,255,.2)"><option value="new">الأحدث</option><option value="old">الأقدم</option><option value="fav">المفضلة فقط</option></select>
-</div>
-<div class="cats" id="cats"></div>
-<div id="recentBox" style="display:none;background:rgba(0,242,254,.08);border:1px solid var(--c2);border-radius:12px;padding:10px;margin-bottom:12px"><b>👁️ شوهدت مؤخراً:</b> <span id="recentText"></span></div>
-<div class="grid" id="grid"></div>
-</div>
+<div class="news-ticker-bar"><div class="news-ticker-content" id="newsTickerText">🔥 أهلاً بك في متجر ALIOPZTE الرسمي للألعاب والمودات</div></div>
 
-<div class="side">
-<div class="sideCard discord"><h3><i class="fa-brands fa-discord"></i> سيرفر الديسكورد الرسمي</h3><p style="font-size:13px;color:#e0e7ff">انضم لمجتمع ALIOPZTE، ناقش، اطلب، وشارك مع الكل.</p><a href="https://discord.gg/7BNpX9uZa" target="_blank" class="btn" style="background:#fff;color:#5865F2;width:100%;display:block;text-align:center">انضم للسيرفر الآن</a></div>
-<div class="sideCard"><h3>📊 إحصائيات</h3><p>🎬 <b id="stCount">0</b> عنصر</p><p>❤️ <b id="stFav">0</b> مفضلة عندك</p><p>🎨 ثيمك الحالي: <b id="stTheme">RGB</b></p></div>
-<div class="sideCard"><h3>ℹ️ عن المتجر</h3><p style="color:#94a3b8;font-size:13px;line-height:1.6">أنا علي. هذا متجري الرسمي. هون بنشر حلقاتي، سكربتاتي، وألعابي. كل شي هون مني، وانت بس تتصفح وتحمل.</p></div>
+<div class="container">
+<div class="featured-banner"><div><span class="featured-badge"><i class="fa-solid fa-fire"></i> الأفضل والأكثر رواجاً</span><div class="featured-title" id="featuredTitleText">جاري التحميل...</div><p id="featuredDescText" style="color:var(--text-muted);font-size:.8rem;margin-top:2px"></p></div><button class="btn-card-view" style="width:auto;padding:8px 16px" onclick="openFeaturedModal()"><i class="fa-solid fa-eye"></i> التفاصيل والتحميل</button></div>
+
+<div id="recentlyViewedBox" class="recent-box"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:.85rem;font-weight:900;color:var(--theme-c2)"><i class="fa-solid fa-clock-rotate-left"></i> شاهدت مؤخراً:</span><button onclick="clearRecentlyViewed()" style="background:none;border:none;color:var(--text-muted);font-size:.72rem;cursor:pointer">مسح السجل</button></div><div id="recentlyViewedList" class="recent-list"></div></div>
+
+<div class="main-layout"><main class="main-content">
+<nav class="categories-bar">
+<button class="cat-btn active" onclick="selectCategory('all',this)"><i class="fa-solid fa-border-all"></i> الكل</button>
+<button class="cat-btn" onclick="selectCategory('minecraft',this)"><i class="fa-solid fa-cube"></i> ماين كرافت</button>
+<button class="cat-btn" onclick="selectCategory('roblox',this)"><i class="fa-solid fa-gamepad"></i> روبلكس</button>
+<button class="cat-btn" onclick="selectCategory('scripts',this)"><i class="fa-solid fa-code"></i> سكربتات</button>
+<button class="cat-btn" onclick="selectCategory('other-games',this)"><i class="fa-solid fa-gamepad"></i> ألعاب أخرى</button>
+<button class="cat-btn" onclick="selectCategory('videos',this)"><i class="fa-solid fa-video"></i> فيديوهات</button>
+</nav>
+<div class="items-grid" id="itemsGrid"></div>
+</main>
+<aside class="partners-sidebar">
+<div class="sidebar-box"><h3 style="margin:0 0 8px"><i class="fa-brands fa-discord" style="color:#5865F2"></i> سيرفر الديسكورد الرسمي</h3><p style="color:var(--text-muted);font-size:.82rem;line-height:1.6">انضم لمجتمع ALIOPZTE، ناقش واطلب وشارك.</p><a href="https://discord.gg/7BNpX9uZa" target="_blank" class="btn-card-view" style="text-decoration:none">انضم للسيرفر الآن</a></div>
+<div class="sidebar-box"><h3 style="margin:0 0 8px">ℹ️ عن المتجر</h3><p style="color:var(--text-muted);font-size:.82rem;line-height:1.6">أنا علي. هذا متجري الرسمي. هون بنشر حلقاتي، سكربتاتي، وألعابي. كل شي هون مني.</p></div>
+</aside></div>
 </div>
+<div style="text-align:center;color:var(--text-muted);padding:20px;font-size:.8rem">ALIOPZTE Store © 2026 • كل الحقوق محفوظة</div>
+<div class="bottomNav"><a href="#">🏠 الرئيسية</a><a href="#itemsGrid">🎬 العناصر</a><a href="https://discord.gg/7BNpX9uZa" target="_blank">💬 ديسكورد</a></div>
 
-<div class="about"><h2>ℹ️ من نحن - ALIOPZTE</h2><p style="color:#cbd5e1;line-height:1.7">مرحباً بك في ALIOPZTE Store، عالم الـ RGB والألعاب. هون تلاقي سلاسل الجزيرة، ماين كرافت، روبلكس، سكربتات، وألعاب أخرى. تابعني على يوتيوب وانستغرام وتيك توك.</p></div>
-</div>
-
-<div style="text-align:center;color:#64748b;padding:20px">ALIOPZTE Store © 2026 • كل الحقوق محفوظة</div>
-<div class="bottomNav"><a href="#">🏠 الرئيسية</a><a href="#grid">🎬 العناصر</a><a href="https://discord.gg/7BNpX9uZa" target="_blank">💬 ديسكورد</a></div>
-
-<div class="modal" id="modal" onclick="if(event.target==this)closeM()"><div class="box"><img id="mImg"><div class="pad"><button onclick="closeM()" style="float:left" class="btn btn-glass">✕</button><h2 id="mTitle" style="margin:0"></h2><p id="mCat" style="color:var(--c2);font-weight:800"></p><p id="mDesc" style="color:#cbd5e1;line-height:1.7"></p><p id="mMeta" style="color:#64748b;font-size:13px"></p><div class="row"><button class="btn btn-grad" id="mDl">⬇ تحميل / مشاهدة</button><button class="btn btn-glass" onclick="copyLink()">🔗 نسخ الرابط</button><button class="btn btn-glass" id="mFavBtn">❤️ مفضلة</button></div></div></div></div>
+<div id="itemModal" class="modal-overlay" onclick="if(event.target==this)closeModal('itemModal')"><div class="modal-box">
+<button class="modal-close" onclick="closeModal('itemModal')"><i class="fa-solid fa-xmark"></i></button>
+<img id="mImg" src="" style="width:100%;max-height:220px;object-fit:cover;border-radius:10px;margin-bottom:10px">
+<h2 id="mTitle" style="font-size:1.1rem;margin-bottom:4px"></h2>
+<p id="mDesc" style="font-size:.82rem;color:#cbd5e1;background:rgba(0,0,0,.4);padding:8px;border-radius:8px;margin:8px 0"></p>
+<div id="mScriptBox" class="script-copy-box" style="display:none"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><span style="font-size:.76rem;color:var(--theme-c2);font-weight:bold"><i class="fa-solid fa-terminal"></i> نسخ سريع للسكربت / الرابط:</span><button onclick="copyItemScriptOrUrl()" class="btn-card-view" style="width:auto;padding:4px 10px;font-size:.74rem">نسخ</button></div><code id="mScriptCode" style="display:block;font-size:.74rem;color:#00ff88;word-break:break-all;max-height:60px;overflow-y:auto"></code></div>
+<button id="mDlBtn" onclick="downloadNow()" class="btn-card-view"><i class="fa-solid fa-download"></i> تحميل / مشاهدة الآن</button>
+<div style="display:flex;gap:8px;margin-top:10px"><button onclick="shareCurrentItem()" class="btn-card-view" style="background:rgba(255,255,255,.1)">🔗 مشاركة</button><button onclick="toggleFavCurrent()" class="btn-card-view" style="background:rgba(255,255,255,.1)">❤️ مفضلة</button></div>
+<p id="itemActionMsg" style="margin-top:8px;font-size:.8rem;font-weight:bold;display:none"></p>
+</div></div>
 
 <script>
-let ALL=[],curCat='الكل',curItem=null;
-const FALLBACK=[
-{id:1,title:"سلسلة الجزيرة شوق الحلقة الخامسة 1080p",description:"الحلقة الخامسة من سلسلة الجزيرة شوق، بجودة 1080p، لا تفوتك.",category:"فيديوهات",image:"https://picsum.photos/seed/ali1/800/450",download:"https://youtube.com",date:"2026-11-17"},
-{id:2,title:"سلسلة الجزيرة شوق الحلقة الرابعة 720p 50fps",description:"الحلقة الرابعة، أكشن ومفاجآت جديدة في الجزيرة.",category:"فيديوهات",image:"https://picsum.photos/seed/ali2/800/450",download:"https://youtube.com",date:"2026-11-16"},
-{id:3,title:"سلسلة الجزيرة شوق الحلقة الثالثة",description:"الحلقة الثالثة، بداية المغامرة الحقيقية.",category:"فيديوهات",image:"https://picsum.photos/seed/ali3/800/450",download:"https://youtube.com",date:"2026-11-15"},
-{id:4,title:"أفضل مود ندر - ماين كرافت",description:"مود ندر رهيب لماين كرافت، جربه الحين.",category:"ماين كرافت",image:"https://picsum.photos/seed/ali4/800/450",download:"https://youtube.com",date:"2026-11-14"},
-{id:5,title:"أفضل سكربت روبلكس",description:"سكربت قوي وسريع لروبلكس، شرح كامل بالفيديو.",category:"سكربتات",image:"https://picsum.photos/seed/ali5/800/450",download:"https://youtube.com",date:"2026-11-13"},
-{id:6,title:"لعبة جديدة - ألعاب أخرى",description:"لعبة جديدة جربتها وعجبتني، شوفها.",category:"ألعاب أخرى",image:"https://picsum.photos/seed/ali6/800/450",download:"https://youtube.com",date:"2026-11-12"}
-];
-const CATS=['الكل','ماين كرافت','روبلكس','سكربتات','ألعاب أخرى','فيديوهات'];
-const THEMES=[{n:'RGB',c:''},{n:'Matrix',c:'theme-matrix'},{n:'Gold',c:'theme-gold'},{n:'Red',c:'theme-crimson'}];
-let ti=parseInt(localStorage.getItem('ali_theme_idx')||'0');applyTheme(ti);
-function applyTheme(i){document.body.className=document.body.className.replace(/theme-\w+/g,'');if(THEMES[i].c)document.body.classList.add(THEMES[i].c);document.getElementById('themeName').textContent=THEMES[i].n;document.getElementById('stTheme').textContent=THEMES[i].n}
-function cycleTheme(){ti=(ti+1)%THEMES.length;localStorage.setItem('ali_theme_idx',ti);applyTheme(ti)}
-function favs(){try{return JSON.parse(localStorage.getItem('ali_wishlist')||'[]')}catch(e){return[]}}
-function isFav(id){return favs().includes(id)}
-function toggleFav(id,ev){if(ev)ev.stopPropagation();let f=favs();let i=f.indexOf(id);if(i>=0)f.splice(i,1);else f.push(id);localStorage.setItem('ali_wishlist',JSON.stringify(f));render()}
-function render(){
-let q=(document.getElementById('search').value||'').trim();
-document.getElementById('cats').innerHTML=CATS.map(c=>'<button class="chip '+(c==curCat?'active':'')+'" onclick="setCat(\''+c+'\')">'+c+'</button>').join('');
-let list=ALL.filter(v=>{if(curCat!='الكل'&&v.category!=curCat)return false;if(document.getElementById('sort').value=='fav'&&!isFav(v.id))return false;if(q&&!(v.title+v.description+v.category).includes(q))return false;return true});
-let s=document.getElementById('sort').value;if(s=='old')list=[...list].reverse();
-if(!list.length){document.getElementById('grid').innerHTML='<p style="grid-column:1/-1;text-align:center;color:#94a3b8">ما فيه عناصر بهالقسم بعد...</p>'}else{
-document.getElementById('grid').innerHTML=list.map(v=>'<div class="card" onclick="openItem('+v.id+')"><div class="card-img"><img src="'+v.image+'" onerror="this.src=\'https://picsum.photos/seed/ali/800/450\'"><span class="badge">'+v.category+'</span><button class="heart '+(isFav(v.id)?'on':'')+'" onclick="toggleFav('+v.id+',event)">❤️</button></div><div class="card-body"><h3>'+v.title+'</h3><p>'+v.description+'</p><div class="meta">📅 '+(v.date||'')+'</div><div class="row"><button class="btn btn-grad" onclick="event.stopPropagation();openItem('+v.id+')">التفاصيل</button><button class="btn btn-glass" onclick="event.stopPropagation();dl('+v.id+')">⬇ تحميل</button></div></div></div>').join('')}
-document.getElementById('stCount').textContent=ALL.length;document.getElementById('stFav').textContent=favs().length;
-let rec=JSON.parse(localStorage.getItem('ali_recent_items')||'[]');if(rec.length){let last=ALL.find(x=>x.id==rec[0]);if(last){document.getElementById('recentBox').style.display='block';document.getElementById('recentText').textContent=last.title}}
+let allItems=[], currentCategory='all', viewingWishlist=false, activeItemObj=null;
+let wishlist=JSON.parse(localStorage.getItem("ali_wishlist")||"[]");
+const CAT_AR={minecraft:"ماين كرافت",roblox:"روبلكس",scripts:"سكربتات","other-games":"ألعاب أخرى",videos:"فيديوهات",mods:"مودات"};
+const themes=[{name:'RGB',class:''},{name:'Matrix',class:'theme-matrix'},{name:'Gold',class:'theme-gold'},{name:'Red',class:'theme-crimson'}];
+let currentThemeIdx=parseInt(localStorage.getItem("ali_theme_idx")||"0");
+function applyTheme(i){document.body.classList.remove('theme-matrix','theme-gold','theme-crimson');if(themes[i].class)document.body.classList.add(themes[i].class);document.getElementById("themeLabel").innerText=themes[i].name}
+function cycleTheme(){currentThemeIdx=(currentThemeIdx+1)%themes.length;localStorage.setItem("ali_theme_idx",currentThemeIdx);applyTheme(currentThemeIdx)}
+const speeds=[{label:'0.5x',value:'8s'},{label:'1x',value:'4s'},{label:'1.5x',value:'2s'},{label:'2x',value:'1s'}];
+let currentSpeedIdx=parseInt(localStorage.getItem("ali_speed_idx")||"1");
+function applySpeed(i){let s=speeds[i]||speeds[1];document.documentElement.style.setProperty('--rgb-speed',s.value);document.getElementById("speedLabel").innerText=s.label}
+function cycleRgbSpeed(){currentSpeedIdx=(currentSpeedIdx+1)%speeds.length;localStorage.setItem("ali_speed_idx",currentSpeedIdx);applySpeed(currentSpeedIdx)}
+applyTheme(currentThemeIdx);applySpeed(currentSpeedIdx);
+function filterItems(){renderItems(allItems)}
+function selectCategory(cat,btn){currentCategory=cat;document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');renderItems(allItems)}
+function renderItems(items){
+let grid=document.getElementById('itemsGrid');grid.innerHTML='';
+let q=(document.getElementById('searchInput').value||'').trim().toLowerCase();
+let filtered=items.filter(i=>{
+if(i.category==='mods')return false;
+let matchesCat=(currentCategory==='all')||(i.category===currentCategory);
+let matchesWish=!viewingWishlist||wishlist.includes(i.id);
+let matchesSearch=!q||(i.title&&i.title.toLowerCase().includes(q))||(i.desc&&i.desc.toLowerCase().includes(q));
+return matchesCat&&matchesWish&&matchesSearch});
+if(!filtered.length){grid.innerHTML='<p style="text-align:center;grid-column:1/-1;padding:30px;color:var(--text-muted)">لا توجد عناصر مطابقة للبحث.</p>';return}
+filtered.forEach((item,index)=>{
+let isFav=wishlist.includes(item.id);
+let glow='';
+if(window.featuredItemObj&&item.id==window.featuredItemObj.id)glow='<span class="glow-status-badge">🔥 رائج</span>';
+else if(index<2)glow='<span class="glow-status-badge" style="background:linear-gradient(90deg,#10b981,#059669)">🆕 جديد</span>';
+else if(item.category==='scripts')glow='<span class="glow-status-badge">💎 حصري</span>';
+grid.innerHTML+=`<div class="item-card"><button class="btn-card-fav ${isFav?'active':''}" onclick="toggleWishlist(event,${item.id})"><i class="fa-solid fa-heart"></i></button><div class="card-thumb" onclick="openModalById(${item.id})"><img src="${item.image}" loading="lazy" onerror="this.src='https://picsum.photos/seed/ali/800/450'"><span class="badge-tag">${CAT_AR[item.category]||item.category}</span>${glow}</div><div class="card-details" onclick="openModalById(${item.id})"><h3 class="card-title">${item.title}</h3><div class="card-meta-bar"><span><i class="fa-solid fa-shield-check"></i> مفحوص وآمن</span><span>•</span><span><i class="fa-solid fa-mobile-screen"></i> الجوال والكمبيوتر</span></div><p class="card-desc">${item.desc||'...'}</p><button class="btn-card-view"><i class="fa-solid fa-eye"></i> التفاصيل والتحميل</button></div></div>`;
+});
 }
-function setCat(c){curCat=c;render();document.getElementById('grid').scrollIntoView({behavior:'smooth'})}
-function openItem(id){let v=ALL.find(x=>x.id==id);curItem=v;let rec=JSON.parse(localStorage.getItem('ali_recent_items')||'[]');rec=rec.filter(x=>x!=id);rec.unshift(id);localStorage.setItem('ali_recent_items',JSON.stringify(rec.slice(0,5)));document.getElementById('mImg').src=v.image;document.getElementById('mTitle').textContent=v.title;document.getElementById('mCat').textContent=v.category;document.getElementById('mDesc').textContent=v.description;document.getElementById('mMeta').textContent='📅 '+(v.date||'')+' • ID: '+v.id;document.getElementById('mDl').onclick=()=>dl(id);document.getElementById('mFavBtn').textContent=isFav(id)?'❤️ بالمفضلة':'🤍 مفضلة';document.getElementById('mFavBtn').onclick=()=>{toggleFav(id);document.getElementById('mFavBtn').textContent=isFav(id)?'❤️ بالمفضلة':'🤍 مفضلة'};document.getElementById('modal').classList.add('open');render()}
-function closeM(){document.getElementById('modal').classList.remove('open')}
-function dl(id){let v=ALL.find(x=>x.id==id);if(v&&v.download)window.open(v.download,'_blank')}
-function copyLink(){if(curItem&&navigator.clipboard)navigator.clipboard.writeText(curItem.download||location.href);alert('تم نسخ الرابط!')}
-async function load(){try{let r=await fetch('data.json',{cache:'no-cache'});if(!r.ok)throw 0;ALL=await r.json()}catch(e){ALL=FALLBACK}
-if(ALL.length){let f=ALL[0];document.getElementById('featured').innerHTML='<div class="hero"><img src="'+f.image+'"><div class="hero-txt"><span style="background:var(--c1);padding:4px 10px;border-radius:999px;font-size:12px">🔥 العنصر المميز</span><h2>'+f.title+'</h2><p>'+f.description+'</p><button class="btn btn-grad" onclick="openItem('+f.id+')">التفاصيل والتحميل →</button></div></div>'}render()}load();
+function openModalById(id){let item=allItems.find(i=>String(i.id)===String(id));if(item)openModal(item)}
+function openModal(item){
+activeItemObj=item;
+let rec=JSON.parse(localStorage.getItem("ali_recent_items")||"[]");rec=rec.filter(x=>String(x)!==String(item.id));rec.unshift(item.id);localStorage.setItem("ali_recent_items",JSON.stringify(rec.slice(0,6)));renderRecentlyViewed();
+document.getElementById('mImg').src=item.image||'';
+document.getElementById('mTitle').innerText=item.title||'';
+document.getElementById('mDesc').innerText=item.desc||'';
+let sb=document.getElementById('mScriptBox');
+if(item.script){sb.style.display='block';document.getElementById('mScriptCode').innerText=item.script}else if(item.url){sb.style.display='block';document.getElementById('mScriptCode').innerText=item.url}else sb.style.display='none';
+document.getElementById('itemModal').classList.add('open');
+}
+function closeModal(id){document.getElementById(id).classList.remove('open')}
+function toggleWishlist(e,id){e.stopPropagation();if(wishlist.includes(id))wishlist=wishlist.filter(x=>x!==id);else wishlist.push(id);localStorage.setItem("ali_wishlist",JSON.stringify(wishlist));updateWishlistCount();renderItems(allItems)}
+function toggleFavCurrent(){if(!activeItemObj)return;let id=activeItemObj.id;if(wishlist.includes(id))wishlist=wishlist.filter(x=>x!==id);else wishlist.push(id);localStorage.setItem("ali_wishlist",JSON.stringify(wishlist));updateWishlistCount();renderItems(allItems)}
+function updateWishlistCount(){document.getElementById('favCount').innerText=wishlist.length}
+function toggleWishlistFilter(){viewingWishlist=!viewingWishlist;renderItems(allItems)}
+function downloadNow(){if(activeItemObj&&activeItemObj.url)window.open(activeItemObj.url,'_blank')}
+function copyItemScriptOrUrl(){let t=document.getElementById('mScriptCode').innerText;if(navigator.clipboard)navigator.clipboard.writeText(t);let m=document.getElementById('itemActionMsg');m.style.display='block';m.style.color='#00ff88';m.innerText='تم النسخ!';setTimeout(()=>m.style.display='none',2000)}
+function shareCurrentItem(){if(!activeItemObj)return;let u=activeItemObj.url||location.href;if(navigator.clipboard)navigator.clipboard.writeText(u);alert('تم نسخ رابط العنصر!')}
+function openFeaturedModal(){if(window.featuredItemObj)openModal(window.featuredItemObj)}
+function renderRecentlyViewed(){
+let rec=JSON.parse(localStorage.getItem("ali_recent_items")||"[]");let box=document.getElementById('recentlyViewedBox');if(!rec.length){box.style.display='none';return}
+box.style.display='block';document.getElementById('recentlyViewedList').innerHTML=rec.map(id=>{let r=allItems.find(x=>String(x.id)===String(id));if(!r)return'';return `<div class="recent-mini-card" onclick="openModalById(${r.id})"><img src="${r.image}"><div style="overflow:hidden"><div style="font-size:.78rem;font-weight:bold;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${r.title}</div><div style="font-size:.68rem;color:var(--text-muted)">${CAT_AR[r.category]||r.category}</div></div></div>`}).join('');
+}
+function clearRecentlyViewed(){localStorage.removeItem("ali_recent_items");renderRecentlyViewed()}
+async function loadStoreData(){
+try{
+let res=await fetch('data.json',{cache:'no-cache'});if(!res.ok)throw 0;let data=await res.json();
+allItems=data.items||[];
+if(data.newsTicker)document.getElementById('newsTickerText').innerText=data.newsTicker;
+let feat=allItems.find(i=>String(i.id)===String(data.featuredId))||allItems[0];
+window.featuredItemObj=feat;
+if(feat){document.getElementById('featuredTitleText').innerText=feat.title;document.getElementById('featuredDescText').innerText=feat.desc||''}
+}catch(e){allItems=[]}
+updateWishlistCount();renderRecentlyViewed();renderItems(allItems);
+}
+loadStoreData();
 </script>
 </body>
 </html>
